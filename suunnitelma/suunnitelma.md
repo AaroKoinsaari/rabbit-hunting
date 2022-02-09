@@ -10,7 +10,7 @@ Tekijä: Aaro Koinsaari
 
 Työ git-varaston osoite: <https://gitlab.jyu.fi/aarkasko/ohj1ht>
 
-Pelin nimi: Jäniksen metästys -peli
+Pelin nimi: Jäniksen metästys
 
 Pelialusta: Windows
 
