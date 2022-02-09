@@ -6,29 +6,33 @@ Poista sitten *kaikki* suluilla merkityt kohdat.)
 
 ## Tietoja 
 
-Tekijä: (Etunimi Sukunimi)
+Tekijä: Aaro Koinsaari
 
-Työ git-varaston osoite: <https://gitlab.jyu.fi/anlakane/ohj1ht> (*Korvaa* tämä osoite oman git-varastosi osoitteella)
+Työ git-varaston osoite: <https://gitlab.jyu.fi/aarkasko/ohj1ht>
 
-Pelin nimi: (Nimi)
+Pelin nimi: Jäniksen metästys -peli
 
-Pelialusta: Windows/macOS/Linux (Valitse alusta)
+Pelialusta: Windows
 
-Pelaajien lukumäärä: 1/2/3/4 (Valitse pelaajien lukumäärä)
+Pelaajien lukumäärä: 1
 
 ## Pelin tarina
 
-(Pelin tarina.)
+Metsästyskausi on taas alkanut, ja Hugo-koira on lähtenyt jänismetsälle tavoitteenaan saada mahdollisimman monta jänistä kiinni. Hugon tehtävänä on löytää jänis metsästä, saada se liikkeelle ja ajaa se suoraan metsästäjän luokse, joka pysäyttää tämän. Onnistuuko Hugo löytämään jäniksiä ja tuomaan ruokapöytään jouluksi herkullista jänispaistia?
 
 ## Pelin idea ja tavoitteet
 
-(Pelin idea ja tavoitteet.)
+Kyseessä on tasohyppelypeli. Hugo-koiran on ensin löydettävä piilossa oleva jänis kentältä, joka kuitenkin löydyttyään juoksee aina karkuun Hugoa. Jänis on yleensä liian nopea, joten tavoitteena on ajaa jänis tietyssä paikassa odottavan metsästäjän luokse, joka lopulta viimeistelee homman.
+
+Hugo-koiralla on kaksi minuuttia aikaa löytää ja metsästää niin monta jänistä kuin mahdollista.
 
 ## Hahmotelma pelistä
 
-(Kun olet lisännyt suunnitelmakuvan tähän hakemistoon, linkitä se tähän alle. Alla on esimerkkikuvan linkitys.)
-
-![Esimerkkikuva](esimerkkikuva.png "Esimerkkikuva")
+![Hahmotelma pelistä](hahmotelma.png "Hahmotelma pelistä")
+![Hugo-koira](hugo.png "Hugo-koira")
+![Metsästäjä](metsastaja.png "Metsästäjä")
+![Jänis](pupujussi.png "Jänis")
+![Rusakko](rusakko.png "Rusakko")
 
 ## Toteutuksen suunnitelma
 
