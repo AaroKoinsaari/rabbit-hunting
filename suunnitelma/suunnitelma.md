@@ -35,12 +35,13 @@ Hugo-koiralla on kaksi minuuttia aikaa löytää ja metsästää niin monta jän
 Helmikuu
 
 - Laitan Hugon liikkeelle
-- Teen kentän ensimmäisen version
-- Teen jäniksen/rusakon ja esteitä
+- Teen ensimmäiset pelikentät
+- Teen esteet kentälle ja niistä silmukan
 
 Maaliskuu
 
-- Laitan jäniksen/rusakon liikkumaan
+- Laitan taulukkoon jäniksen/rusakon ja pelikentät (jahdattavaksi tulee jänis tai rusakko sen mukaan, millainen maasto on kyseessä)
+- Laitan jäniksen/rusakon liikkumaan Hugoa karkuun sen ollessa tietyllä etäisyydellä.
 - Teen metsästäjän
 - Lisään pistetaulukon ja ajastimen
 - Lisään äänet
@@ -50,3 +51,4 @@ Jos aikaa jää
 - Laitan Hugon haukkumaan napin painalluksesta
 - Lisään kentälle jäniksen jälkiä
 - Parannan animaatioita ja kenttiä
+- Lisään taulukkoon erilaisia esteitä vaihtumaan maaston mukaan
