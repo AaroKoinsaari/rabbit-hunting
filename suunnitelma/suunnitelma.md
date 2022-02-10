@@ -1,9 +1,5 @@
 # Harjoitustyön suunnitelma
 
-(Täydennä oman pelisi tiedot tähän tiedostoon muokkaamalla 
-tiedostoa tekstieditorissa. Käytä [Markdown-syntaksia](https://about.gitlab.com/handbook/markdown-guide/).
-Poista sitten *kaikki* suluilla merkityt kohdat.)
-
 ## Tietoja 
 
 Tekijä: Aaro Koinsaari
@@ -38,18 +34,19 @@ Hugo-koiralla on kaksi minuuttia aikaa löytää ja metsästää niin monta jän
 
 Helmikuu
 
-- (Tavoite 1)
-- (Tavoite 2)
-- (Tavoite 3)
+- Laitan Hugon liikkeelle
+- Teen kentän ensimmäisen version
+- Teen jäniksen/rusakon ja esteitä
 
 Maaliskuu
 
-- (Tavoite 1)
-- (Tavoite 2)
-- (Tavoite 3)
+- Laitan jäniksen/rusakon liikkumaan
+- Teen metsästäjän
+- Lisään pistetaulukon ja ajastimen
+- Lisään äänet
 
 Jos aikaa jää
 
-- (Tavoite 1)
-- (Tavoite 2)
-- (Tavoite 3)
+- Laitan Hugon haukkumaan napin painalluksesta
+- Lisään kentälle jäniksen jälkiä
+- Parannan animaatioita ja kenttiä
