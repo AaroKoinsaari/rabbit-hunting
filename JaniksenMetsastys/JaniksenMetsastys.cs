@@ -17,8 +17,17 @@ using System.Collections.Generic;
 /// </summary>
 public class Pahis : PlatformCharacter
 {
+    /// <summary>
+    /// Kuinka monta elämäpistettä Pahis-oliolla on jäljelllä.
+    /// </summary>
     private int elamiaJaljella;
 
+    /// <summary>
+    /// Pahis, jolla on elämäpisteet.
+    /// </summary>
+    /// <param name="leveys">Pahiksen leveys.</param>
+    /// <param name="korkeus">Pahiksen korkeus.</param>
+    /// <param name="elamapisteet">Pahiksen elämäpisteet.</param>
     public Pahis(double leveys, double korkeus, int elamapisteet) : base(leveys, korkeus)
     {
         this.elamiaJaljella = elamapisteet;    
@@ -43,16 +52,6 @@ public class Pahis : PlatformCharacter
 /// </summary>
 public class JaniksenMetsastys : PhysicsGame
 {
-    /// <summary>
-    /// Pelaajan liikutusvoima sivuille.
-    /// </summary>
-    private const double LIIKUTUSVOIMA = 250;
-
-    /// <summary>
-    /// Pelaajan hyppyvoima.
-    /// </summary>
-    private const double HYPPYVOIMA = 900;
-
     /// <summary>
     /// Pelikentän koko.
     /// </summary>
@@ -85,7 +84,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// <param name="paikka">Pelaajan kohta kentällä pelin alussa.</param>
     /// <param name="korkeus">Pelaajan korkeus.</param>
     /// <param name="leveys">Pelaajan leveys.</param>
-    public void LuoPelaaja(Vector paikka, double korkeus, double leveys)
+    private void LuoPelaaja(Vector paikka, double korkeus, double leveys)
     {
         PlatformCharacter pelaaja = new PlatformCharacter(korkeus, leveys);
         pelaaja.Position = paikka;
@@ -104,6 +103,9 @@ public class JaniksenMetsastys : PhysicsGame
         Camera.Follow(pelaaja);
         Camera.ZoomFactor = 2;
 
+        const double LIIKUTUSVOIMA = 250;
+        const double HYPPYVOIMA = 900;
+
         Keyboard.Listen(Key.Right, ButtonState.Down, delegate { pelaaja.Walk(LIIKUTUSVOIMA); }, "Liiku oikealle");
         Keyboard.Listen(Key.Left, ButtonState.Down, delegate { pelaaja.Walk(-LIIKUTUSVOIMA); }, "Liiku vasemmalle");
         Keyboard.Listen(Key.Up, ButtonState.Pressed, delegate { pelaaja.Jump(HYPPYVOIMA); }, "Hyppää");
@@ -115,7 +117,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// Ammutaan AssaultRifle-aseella.
     /// </summary>
     /// <param name="ampuja">Aseella ampuva olio.</param>
-    public void AmmuAseella(PlatformCharacter ampuja)
+    private void AmmuAseella(PlatformCharacter ampuja)
     {
         ampuja.Weapon.Angle = ampuja.FacingDirection.Angle;
         PhysicsObject panos = ampuja.Weapon.Shoot();
@@ -132,7 +134,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// </summary>
     /// <param name="ammus">Aseesta lähtevä ammus.</param>
     /// <param name="kohde">Kohde, johon ammus osuu.</param>
-    public void AmmusOsui(PhysicsObject ammus, PhysicsObject kohde)
+    private void AmmusOsui(PhysicsObject ammus, PhysicsObject kohde)
     {
         ammus.Destroy();
     }
@@ -143,7 +145,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// </summary>
     /// <param name="ammus">Aseesta lähtevä ammus.</param>
     /// <param name="pahis">Pahis, johon ammus osuuu.</param>
-    public void AmmusOsuiPahikseen(PhysicsObject ammus, Pahis pahis)
+    private void AmmusOsuiPahikseen(PhysicsObject ammus, Pahis pahis)
     {
         ammus.Destroy();
         pahis.Osuma();
@@ -155,7 +157,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// </summary>
     /// <param name="tormaaja">Törmäävä olio.</param>
     /// <param name="kohdeJohonTormataan">Olio, johon törmätään.</param>
-    public void OsuttiinPupujussiin(PhysicsObject tormaaja, PhysicsObject kohdeJohonTormataan)
+    private void OsuttiinPupujussiin(PhysicsObject tormaaja, PhysicsObject kohdeJohonTormataan)
     {
         MessageDisplay.Add("Sait kiinni pupujussin!");
         pistelaskuri.Value++;
@@ -169,7 +171,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// <param name="paikka">Pupujussin paikka pelikentällä.</param>
     /// <param name="korkeus">Pupujussin korkeus.</param>
     /// <param name="leveys">Pupujussin leveys.</param>
-    public void LuoPupujussi(Vector paikka, double korkeus, double leveys)
+    private void LuoPupujussi(Vector paikka, double korkeus, double leveys)
     {
         Image[] kuvat = LoadImages("jänis", "rusakko");
         PlatformCharacter pupujussi = new PlatformCharacter(korkeus, leveys);
@@ -200,7 +202,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// <param name="paikka">Pahiksen paikka pelikentällä.</param>
     /// <param name="korkeus">Pahiksen korkeus.</param>
     /// <param name="leveys">Pahiksen leveys.</param>
-    public void LuoPahis(Vector paikka, double korkeus, double leveys)
+    private void LuoPahis(Vector paikka, double korkeus, double leveys)
     {
         Pahis pahis = new Pahis(korkeus, leveys, 1);
         Image[] kuvat = LoadImages("ilves", "supikoira", "karhu");
@@ -237,7 +239,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// </summary>
     /// <param name="heittaja">Kranaatin heittävä olio.</param>
     /// <returns>Kranaatti.</returns>
-    public Grenade HeitaKranaatti(Pahis heittaja)
+    private Grenade HeitaKranaatti(Pahis heittaja)
     {
         Grenade kranaatti = new Grenade(4.0);
         heittaja.Throw(kranaatti, Angle.FromDegrees(40), 10000);
@@ -262,7 +264,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// <summary>
     /// Luo pelikentän.
     /// </summary>
-    public void LuoKentta()
+    private void LuoKentta()
     {
         TileMap kentta = TileMap.FromLevelAsset("kentta.txt");
         kentta.SetTileMethod('h', LuoPelaaja);
@@ -281,7 +283,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// <param name="kohta">Esteen paikka pelikentällä.</param>
     /// <param name="leveys">Esteen leveys.</param>
     /// <param name="korkeus">Esteen korkeus.</param>
-    public void LuoEste(Vector kohta, double leveys, double korkeus)
+    private void LuoEste(Vector kohta, double leveys, double korkeus)
     {
         PhysicsObject este = new PhysicsObject(leveys, korkeus);
         este.Position = kohta;
@@ -294,7 +296,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// <summary>
     /// Pistelaskuri kerätyille pupujusseille.
     /// </summary>
-    public void LuoPistelaskuri()
+    private void LuoPistelaskuri()
     {
         pistelaskuri = new IntMeter(0);
 
@@ -314,7 +316,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// <summary>
     /// Pelin lopetus.
     /// </summary>
-    public void PelinLopetus()
+    private void PelinLopetus()
     {
         MultiSelectWindow lopetusvalikko = new MultiSelectWindow("Peli päättyi!", "Lopeta peli");
         lopetusvalikko.AddItemHandler(0, Exit);
@@ -325,7 +327,7 @@ public class JaniksenMetsastys : PhysicsGame
     /// <summary>
     /// Lisää peliin muutamat näppäimet.
     /// </summary>
-    public void LisaaNappaimet()
+    private void LisaaNappaimet()
     {
         Keyboard.Listen(Key.Escape, ButtonState.Pressed, ConfirmExit, "Lopeta peli");
         PhoneBackButton.Listen(ConfirmExit, "Lopeta peli");
